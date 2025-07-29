@@ -17,7 +17,7 @@ describe('import-path-check (mocked fs)', () => {
   }
 
   beforeEach(() => {
-    existsStub = sinon.stub(require('fs'), 'existsSync').callsFake((filePath) => {
+    existsStub = sinon.stub(require('fs-extra'), 'existsSync').callsFake((filePath) => {
       return currentFakeFileSystem.has(normalizePath(filePath))
     })
   })
@@ -43,6 +43,7 @@ describe('import-path-check (mocked fs)', () => {
         'compiler-version': 'off',
         'no-empty-blocks': 'off',
         'no-global-import': 'off',
+        'use-natspec': 'off',
       },
     }
 
@@ -66,6 +67,7 @@ describe('import-path-check (mocked fs)', () => {
       rules: {
         'no-empty-blocks': 'off',
         'no-global-import': 'off',
+        'use-natspec': 'off',
       },
     }
     const report = linter.processStr(code, config, fileName)

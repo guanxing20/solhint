@@ -17,13 +17,19 @@ This rule accepts an array of options:
 | Index | Description                                           | Default Value |
 | ----- | ----------------------------------------------------- | ------------- |
 | 0     | Rule severity. Must be one of "error", "warn", "off". | warn          |
+| 1     | Array of required Foundry test hook function names.   | setUp         |
 
 
 ### Example Config
 ```json
 {
   "rules": {
-    "foundry-test-functions": ["warn",["setUp"]]
+    "foundry-test-functions": [
+      "warn",
+      [
+        "setUp"
+      ]
+    ]
   }
 }
 ```

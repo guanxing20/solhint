@@ -24,6 +24,31 @@ module.exports = Object.freeze({
         maxLength: 32,
       },
     ],
+    'use-natspec': [
+      'warn',
+      {
+        title: {
+          enabled: true,
+          ignore: {},
+        },
+        author: {
+          enabled: true,
+          ignore: {},
+        },
+        notice: {
+          enabled: true,
+          ignore: {},
+        },
+        param: {
+          enabled: true,
+          ignore: {},
+        },
+        return: {
+          enabled: true,
+          ignore: {},
+        },
+      },
+    ],
     'constructor-syntax': 'warn',
     'gas-calldata-parameters': 'warn',
     'gas-custom-errors': 'warn',
@@ -61,7 +86,12 @@ module.exports = Object.freeze({
       },
     ],
     'use-forbidden-name': 'warn',
-    'var-name-mixedcase': 'warn',
+    'var-name-mixedcase': [
+      'warn',
+      {
+        prefixForImmutables: 'IMM_',
+      },
+    ],
     'imports-on-top': 'warn',
     'imports-order': 'warn',
     ordering: 'warn',

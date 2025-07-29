@@ -11,22 +11,25 @@ title:       "max-line-length | Solhint"
 
 
 ## Description
-Line length must be no more than maxlen.
+Line length should not exceed configured number of characters.
 
 ## Options
 This rule accepts an array of options:
 
-| Index | Description                                           | Default Value |
-| ----- | ----------------------------------------------------- | ------------- |
-| 0     | Rule severity. Must be one of "error", "warn", "off". | error         |
-| 1     | Maximum allowed number of characters per line         | 120           |
+| Index | Description                                                    | Default Value |
+| ----- | -------------------------------------------------------------- | ------------- |
+| 0     | Rule severity. Must be one of "error", "warn", "off".          | error         |
+| 1     | Line length should not exceed configured number of characters. | 120           |
 
 
 ### Example Config
 ```json
 {
   "rules": {
-    "max-line-length": ["error",120]
+    "max-line-length": [
+      "error",
+      120
+    ]
   }
 }
 ```

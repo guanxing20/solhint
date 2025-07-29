@@ -1,5 +1,5 @@
 #!env node
-const fs = require('fs')
+const fs = require('fs-extra')
 const { exec, mkdir } = require('shelljs')
 const semver = require('semver')
 const path = require('path')
@@ -158,12 +158,14 @@ ${table(optionsTable)}
 }
 
 function loadExampleConfig(rule) {
-  return `\`\`\`json
-{
-  "rules": {
-    "${rule.ruleId}": ${JSON.stringify(rule.meta.defaultSetup)}
+  const fullConfig = {
+    rules: {
+      [rule.ruleId]: rule.meta.defaultSetup,
+    },
   }
-}
+
+  return `\`\`\`json
+${JSON.stringify(fullConfig, null, 2)}
 \`\`\`
 `
 }
